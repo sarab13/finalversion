@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cats Giphy</title>
 </head>
 <style>
     *{
@@ -16,17 +16,11 @@
         width: 100%;
         height: 100%;
         overflow: auto;
+        position: relative;
     }
   #container { 
-    /*-moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-    -moz-column-gap: 1em;
-    -webkit-column-gap: 1em;*/
-    column-count: 4; 
-    
-
-
+   column-count: 4; 
+   position: relative;
     column-gap: 0.3em;
     width: 80%;
     height: auto;
@@ -39,6 +33,35 @@ img {
     cursor: pointer;
     margin-bottom: 0;
 }
+#image{
+    position:fixed;
+    left:10%;
+    top:93%;
+    width: 150px;
+}
+.header{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.header h1{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.header button{
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+.header #relevant{
+    background-color: black;
+    color: white;
+}
 @media  screen and (max-width:1024px) {
     #container{
         column-count: 2;
@@ -46,12 +69,19 @@ img {
     
 }
 </style>
-<body onscroll="checkhi()">
-    
-    <div  id="container">
-      
+<body onscroll="fetchMore()">
+    <div class="header">
+        <h1>Cats Giphy</h1>
+        <div class="filter">
+            Sort: <button onclick="doSorting('relevant')"  id="relevant">Relevant</button>
+            <button onclick="doSorting('newest')" id="newest">Newest</button>
+        </div>
     </div>
-    
+    <div  id="container">
+    </div>
+    <div id="image">
+        <img src="./Poweredby_100px-White_VertLogo.png">
+    </div>
 </body>
 <script  src="./app.js"></script>
 
